@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy 2 Months!</title>
+    <style>
+        :root {
+            --baby-pink: #fce4ec;
+            --black-bean: #370808;
+            --cordovan: #8b3c46;
+            --new-york-pink: #d97e8a;
+            --marvelous: #ec9fab;
+            --message-bg: #fff0f5;
+            --glow: 0 0 15px rgba(255, 182, 193, 0.7);
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            background: radial-gradient(circle, var(--baby-pink), var(--marvelous));
+            color: var(--black-bean);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--black-bean);
+            animation: glowfade 5s ease-in-out;
+        }
+
+        p {
+            max-width: 90%;
+            font-size: 1.2rem;
+            background: var(--marvelous);
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadein 5s ease-in-out;
+        }
+
+        .card {
+            background: var(--cordovan);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 400px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .love-note {
+            background: var(--new-york-pink);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 1rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--black-bean);
+            padding: 0 1rem;
+        }
+
+        .surprise-btn {
+            margin-top: 2rem;
+            padding: 0.8rem 1.2rem;
+            background: var(--black-bean);
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .surprise-message {
+            margin-top: 1.5rem;
+            background: var(--new-york-pink);
+            color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            max-width: 400px;
+            animation: popin 0.6s ease forwards;
+            display: none;
+        }
+
+        .floating-heart {
+            width: 30px;
+            height: 30px;
+            background: var(--new-york-pink);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            cursor: pointer;
+            animation: pulse 3s infinite ease-in-out;
+            box-shadow: var(--glow);
+        }
+
+        .floating-heart::before,
+        .floating-heart::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: var(--new-york-pink);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .floating-heart::before {
+            top: -15px;
+            left: 0;
+        }
+
+        .floating-heart::after {
+            left: -15px;
+            top: 0;
+        }
+
+        .click-message {
+            position: absolute;
+            background: var(--message-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            opacity: 0;
+            animation: fadeinout 5s forwards;
+        }
+
+        @keyframes fadeinout {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes popin {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) rotate(45deg) scale(1);
+                box-shadow: var(--glow);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotate(45deg) scale(1.1);
+                box-shadow: 0 0 25px rgba(255, 182, 193, 0.9);
+            }
+        }
+
+        @keyframes glowfade {
+            0% {
+                opacity: 0;
+                text-shadow: none;
+                transform: scale(0.9);
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 20px rgba(255, 192, 203, 0.7);
+                transform: scale(1.05);
+            }
+
+            100% {
+                text-shadow: 0 0 10px rgba(255, 192, 203, 0.4);
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>💖 Happy 2 Months Jaan 💖</h1>
+    <p>oh my god!!!!!!!!! ahhhhhh jaan can you beileve its been 2 months? oh my god like its literally been 2 months
+        like ahhh hhbjbkjabjdabjhb im so happy, jaan i wanna spend rest of my life with you i wanna have your babies,
+        these are not empty promises these are my dreams jaan. My love for you keeps on growing, never in my life time i
+        thought id meet someone like you. you make my world brighter jaan so much brighter and happier, you make me
+        wanna be a better person and work hard, i love you so much jaan so much!! you mean the world to me, i can't
+        beilive i bagged someone like you. you truly make my heart happy jaan, i wanna hold you close to me and kiss you
+        all day long. stay with me, i don't want you to leave. Abdullah my jaan my cutie patootie my everything i love
+        you so much jaan!!!!!!</p>
+    <div class="card">
+        <h2>Things I Love About You</h2>
+        <div class="love-note">YOUR EYES!!</div>
+        <div class="love-note">YOUR SMILE!!</div>
+        <div class="love-note">YOUR HAIR!!</div>
+        <div class="love-note">YOUR LIL GIGGLES!!</div>
+        <div class="love-note">THEM KISSES!!</div>
+        <div class="love-note">YOUR HONESTY!!</div>
+        <div class="love-note">THE WAY YOU CARE FOR ME!!</div>
+        <div class="love-note">THE WAY MAKE ME FEEL!!</div>
+        <div class="love-note">THE WAY YOU LOOK AT ME!!</div>
+        <div class="love-note">THE WAY YOU SAY MY NAME!!</div>
+        <div class="love-note">THE WAY YOU MAKE ME SMILE!!</div>
+        <div class="love-note">THE WAY YOU CALL ME YOUR JAAN!!</div>
+        <div class="love-note">THE WAY YOU WINK AT ME!!</div>
+        <div class="love-note">THE WAY YOUR VOICE GETS GENTLY KNOWING THAT IM SAD!!</div>
+        <div class="love-note">THE WAY YOUR EYES GLOW WHEN YOU LOOK AT ME!!</div>
+        <div class="love-note">THEM BEAUTIFUL LIPS!!</div>
+        <div class="love-note">THE WAY YOU GET SO PASSIONATE WHEN YOU TALK ABOUT SOMETHING YOU LIKE!!</div>
+        <div class="love-note">AND THE WAY YOU TILT YOUR HEAD TO THE SIDE AS YOU LOOK AT ME!!</div>
+        <div class="love-note">THE WAY YOU ARE !!</div>
+        <div class="love-note">YOUR SOFT VOICE!!</div>
+        <div class="love-note">THE WAY YOU BITE YOUR LIPS!!</div>
+        <div class="love-note">THE WAY YOUR VOICE GETS SOFT WHEN YOU TALK TO SAFIYA!!</div>
+        <div class="love-note">THE WAY YOU MAKE ME WANNA GRAB THAT FACE AND KISS YOU!!</div>
+        <div class="love-note">AHHHH AND THE WAY YOU SING HIND SONGS FOR ME HEHEHEHEHEHE!!</div>
+        <div class="love-note">I LOVVVVVVEEEEEEEEEE IT WHEN YOU CALL ME JAAN!!</div>
+        <div class="love-note">THE WAY YOUR EYES CLOSE SLOWLY WHEN YOU ARE TIRED!!</div>
+        <div class="love-note">THE WAY YOU YKYK!!</div>
+        <div class="love-note">THEM EYELASHES AHHHHHH!!</div>
+        <div class="love-note">AND OH WHEN YOU SAY "HMM?" OH MY GOD!!</div>
+        <div class="love-note">AND THE WAY YOU MAKE ME SMILE WHEN IM CRYING!!</div>
+        <div class="love-note">THOSE CUTE CHHEKS AGGGHHH I WANNA BITE YOU!!</div>
+        <div class="love-note">WHEN YOU STAY UP JUST TO TALK TO ME!!</div>
+        <div class="love-note">WHEN YOU CALL ME YOUR FAVORITE PERSON!!</div>
+        <div class="love-note">THE WAY YOU ROLL YOUR SLEEVES!!</div>
+        <div class="love-note">THEM VOICE NOTES!!</div>
+        <div class="love-note">THE WAY YOU REMIND ME THAT I MATTER!!</div>
+        <div class="love-note">THE WAY YOU BLOW KISSES AT ME EVEN WHEN THERE ARE PEOPLE AROUND!!</div>
+
+        <div class="love-note">I LOVE EVERYTHING YOU DO LIKE LITERALLY!!</div>
+    </div>
+
+    <button class="surprise-btn" onclick="showSurprise()">🎁 Click for Surprise</button>
+    <div class="surprise-message" id="surpriseMessage">
+
+    </div>
+
+    <div class="footer">
+        Here’s to us, to love, and to every month ahead 💐💘<br />
+        Made with all my love - Nafisa 🌸
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="Blue-Yung-Kai.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+        const audio = document.getElementById('bg-music');
+
+        function showSurprise() {
+            document.getElementById('surpriseMessage').style.display = 'block';
+        }
+
+        window.addEventListener('click', () => {
+            if (audio.paused) audio.play().catch(() => { });
+        });
+
+        for (let i = 0; i < 12; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            const offsetX = (Math.random() - 0.5) * 200;
+            const offsetY = (Math.random() - 0.5) * 200;
+            heart.style.top = `50%`;
+            heart.style.left = `50%`;
+            heart.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(45deg)`;
+            heart.addEventListener('click', (e) => {
+                const msg = document.createElement('div');
+                msg.className = 'click-message';
+                msg.innerText = 'I love you 💘';
+                msg.style.top = `${e.clientY}px`;
+                msg.style.left = `${e.clientX}px`;
+                document.body.appendChild(msg);
+                setTimeout(() => msg.remove(), 5000);
+            });
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+
+</html>
