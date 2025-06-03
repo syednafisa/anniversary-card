@@ -288,6 +288,7 @@
         <div class="love-note">THEM VOICE NOTES!!</div>
         <div class="love-note">THE WAY YOU REMIND ME THAT I MATTER!!</div>
         <div class="love-note">THE WAY YOU BLOW KISSES AT ME EVEN WHEN THERE ARE PEOPLE AROUND!!</div>
+        <div class="love-note">YOU BRING JOY TO MY HEART NA JAAN!!</div>
         <div class="love-note">I LOVE EVERYTHING YOU DO LIKE LITERALLY!!</div>
     </div>
 
@@ -335,7 +336,21 @@ jaannnnn~ muahhhhhhhhhhhhhhhhhhhhhhhhhh hehehehe i love you so much ❤️😽�
             });
             document.body.appendChild(heart);
         }
-    </script>
+  function showSurprise() {
+    const msg = document.getElementById("surpriseMessage");
+    if (msg.style.display === "none" || msg.style.display === "") {
+      msg.style.display = "block";
+    } else {
+      msg.style.display = "none";
+    }
+  }
+
+  // Optional: Hide it initially
+  window.onload = () => {
+    document.getElementById("surpriseMessage").style.display = "none";
+  };
+</script>
+
 </body>
 
 </html>
